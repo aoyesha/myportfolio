@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import FeaturedProjects from "@/components/sections/FeaturedProjects";
 import Testimonials from "@/components/sections/Testimonials";
 import About from "@/components/sections/About";
+import Certifications from "@/components/sections/Certifications";
 import Contact from "@/components/sections/Contact";
 import PageWrapper from "@/components/PageWrapper";
 
@@ -73,6 +74,7 @@ export default function Home() {
           <FeaturedProjects />
           <Testimonials />
           <About />
+          <Certifications />
           <Contact />
         </main>
       </div>

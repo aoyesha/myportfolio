@@ -1,12 +1,19 @@
-import { BiCheckCircle } from "react-icons/bi";
 import LinkWithArrow from "@/components/ui/LinkWithArrow";
-import { PERSONAL_INFO, SKILLS } from "@/lib/constants";
+import { PERSONAL_INFO, SKILLS, SOCIAL_LINKS } from "@/lib/constants";
 
 interface AboutProps {
   className?: string;
 }
 
 export default function About({ className = "" }: AboutProps) {
+  const skillCategories = [
+    { label: "Languages", items: SKILLS.languages },
+    { label: "Framework", items: SKILLS.frameworks },
+    { label: "Databases", items: SKILLS.databases },
+    { label: "Tools", items: SKILLS.tools },
+    { label: "APIs", items: SKILLS.apis },
+  ];
+
   return (
     <section
       id="about"
@@ -17,9 +24,6 @@ export default function About({ className = "" }: AboutProps) {
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[50%] top-[10%] size-[400px] rounded-full bg-accent/4 blur-[120px] animate-pulse-glow" />
         <div className="absolute right-[20%] bottom-[20%] size-[300px] rounded-full bg-accent-blue/5 blur-[100px] animate-pulse-glow" style={{ animationDelay: "2s" }} />
-        {/* Grid lines */}
-        <div className="absolute left-[20%] top-0 h-full w-[1px] bg-gradient-to-b from-transparent via-accent/10 to-transparent" />
-        <div className="absolute right-[20%] top-0 h-full w-[1px] bg-gradient-to-b from-transparent via-accent-cyan/10 to-transparent" />
       </div>
 
       <div className="relative mx-auto max-w-5xl">
@@ -42,24 +46,31 @@ export default function About({ className = "" }: AboutProps) {
             <p className="font-body text-[15px] font-normal leading-[1.7] text-neutral-offwhite md:text-[17px]">
               {PERSONAL_INFO.aboutDescription}
             </p>
-            <LinkWithArrow label="More about me" href="/about" type="demo" />
+            <LinkWithArrow label="More about me" href={SOCIAL_LINKS.linkedin} type="demo" />
           </div>
 
-          {/* Right — Skills */}
+          {/* Right — Technical Skills */}
           <div className="flex flex-1 flex-col items-center gap-6 lg:items-start">
             <h3 className="font-body text-[16px] font-bold uppercase tracking-[2px] text-accent-light">
-              Tech Stack
+              Technical Skills
             </h3>
-            <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
-              {SKILLS.map((skill, i) => (
-                <span
-                  key={skill}
-                  className="group inline-flex items-center gap-2 rounded-[--radius-pill] border border-neutral-dark-gray/40 bg-neutral-card/80 px-5 py-2.5 font-body text-[13px] font-medium text-neutral-offwhite backdrop-blur-sm transition-all duration-300 hover:border-accent/50 hover:bg-accent/10 hover:text-accent-light hover:shadow-lg hover:shadow-accent/10 hover:scale-105"
-                  style={{ animationDelay: `${i * 0.1}s` }}
-                >
-                  <BiCheckCircle size={15} className="text-accent transition-transform group-hover:scale-110" />
-                  {skill}
-                </span>
+            <div className="flex flex-col gap-4 w-full">
+              {skillCategories.map((category) => (
+                <div key={category.label} className="flex flex-col gap-2">
+                  <span className="font-body text-[12px] font-semibold uppercase tracking-wider text-neutral-offwhite/60">
+                    {category.label}
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {category.items.map((skill) => (
+                      <span
+                        key={skill}
+                        className="inline-flex items-center rounded-[--radius-pill] border border-neutral-dark-gray/40 bg-neutral-card/80 px-4 py-2 font-body text-[13px] font-medium text-neutral-offwhite backdrop-blur-sm transition-all duration-300 hover:border-accent/50 hover:bg-accent/10 hover:text-accent-light"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>

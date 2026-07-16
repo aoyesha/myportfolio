@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { BiChevronLeft, BiChevronRight, BiLinkExternal } from "react-icons/bi";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Image from "next/image";
 import { PROJECTS } from "@/lib/constants";
 
@@ -19,9 +19,6 @@ export default function FeaturedProjects({
   const next = () => setCurrent((c) => (c === PROJECTS.length - 1 ? 0 : c + 1));
 
   const project = PROJECTS[current];
-  const githubLink = project.links.find((l) => l.type === "github");
-  const demoLink = project.links.find((l) => l.type === "demo");
-  const projectUrl = githubLink?.href || demoLink?.href || "#";
 
   return (
     <section
@@ -120,16 +117,6 @@ export default function FeaturedProjects({
                     </span>
                   ))}
                 </div>
-
-                <a
-                  href={projectUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2.5 rounded-[--radius-pill] bg-accent px-8 py-4 font-body text-[13px] font-bold uppercase tracking-wide text-white shadow-xl shadow-accent/30 transition-all duration-300 hover:bg-accent-light hover:shadow-2xl hover:shadow-accent/40 hover:scale-[1.05] hover:gap-3"
-                >
-                  View Project
-                  <BiLinkExternal size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
               </div>
             </div>
           </div>

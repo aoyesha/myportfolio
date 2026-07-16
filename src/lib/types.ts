@@ -34,3 +34,10 @@ export interface Testimonial {
   name: string;
   quote: string;
 }
+
+export interface Certification {
+  title: string;
+  issuer: string;
+  date: string;
+  image: string;
+}

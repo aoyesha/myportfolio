@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { BiMenu, BiX } from "react-icons/bi";
 import { NAV_ITEMS, PERSONAL_INFO } from "@/lib/constants";
-import ThemeToggle from "@/components/ThemeToggle";
 
 interface NavbarProps {
   className?: string;
@@ -38,16 +37,13 @@ export default function Navbar({ className = "" }: NavbarProps) {
           ))}
         </div>
 
-        {/* CTA button + theme toggle desktop */}
-        <div className="hidden items-center gap-3 lg:flex">
-          <ThemeToggle />
-          <a
-            href="#contact"
-            className="rounded-[--radius-pill] bg-accent px-6 py-2.5 font-body text-[14px] font-bold text-white transition-all hover:bg-accent-light hover:shadow-lg hover:shadow-accent/25"
-          >
-            Let&apos;s Talk
-          </a>
-        </div>
+        {/* CTA button desktop */}
+        <a
+          href="#contact"
+          className="hidden rounded-[--radius-pill] bg-accent px-6 py-2.5 font-body text-[14px] font-bold text-white transition-all hover:bg-accent-light hover:shadow-lg hover:shadow-accent/25 lg:block"
+        >
+          Let&apos;s Talk
+        </a>
 
         {/* Mobile menu button */}
         <button

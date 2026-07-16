@@ -1,33 +1,34 @@
-import type { Project, Experience, NavItem, Testimonial } from "./types";
+import type { Project, Experience, NavItem, Testimonial, Certification } from "./types";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "#home" },
   { label: "Projects", href: "#projects" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "About", href: "#about" },
+  { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const PROJECTS: Project[] = [
   {
-    title: "Early Childhood Development Checklist for DepEd MIMAROPA",
+    title: "Automated Early Childhood Development Checklist for DepEd MIMAROPA",
     description:
       "Developed a multi-platform application in collaboration with DepEd MIMAROPA as a capstone project, currently being adopted for use by classroom teachers and regional administrators.",
     tag: "Capstone",
     image: "/images/project-1.jpg",
     info: [
-      { label: "Year", value: "2025" },
+      { label: "Year", value: "2025-2026" },
       { label: "Role", value: "Developer" },
     ],
     links: [
-      { label: "Live Demo", href: "#", type: "demo" },
       { label: "See on Github", href: "#", type: "github" },
     ],
   },
   {
     title: "MyShelf",
     description:
-      "A personal bookshelf management app built with modern web technologies, featuring intuitive UI for organizing and tracking reading progress.",
+      "A personal bookshelf app where users can log their mood, filter books by genre or feeling, add stories to their public profile, and recommend reads to other users.",
+    tag: "Project",
     image: "/images/project-2.jpg",
     info: [
       { label: "Year", value: "2024" },
@@ -36,17 +37,16 @@ export const PROJECTS: Project[] = [
     links: [{ label: "View project", href: "#", type: "demo" }],
   },
   {
-    title: "E-commerce Product Page",
+    title: "PasaGo",
     description:
-      "Successfully crafted an engaging product page featuring a dynamic lightbox gallery and seamless cart functionality, showcasing proficiency in JavaScript development.",
-    tag: "Challenge",
+      "A courier application built with Java, HTML, CSS, and JSPs. Focused on robust validation of user information, ensuring accurate and reliable data handling throughout the delivery process.",
+    tag: "Project",
     image: "/images/project-3.jpg",
     info: [
-      { label: "Year", value: "2023" },
-      { label: "Role", value: "Front-end Developer" },
+      { label: "Year", value: "2024" },
+      { label: "Role", value: "Developer" },
     ],
     links: [
-      { label: "Live Demo", href: "#", type: "demo" },
       { label: "See on Github", href: "#", type: "github" },
     ],
   },
@@ -54,10 +54,10 @@ export const PROJECTS: Project[] = [
     title: "Binary Classification of Ischemic Stroke Lesions from Diffusion-Weighted MRI Using Attention-Gated 2D CNN with Grad-CAM Visualization",
     description:
       "Research project implementing an attention-gated 2D convolutional neural network for binary classification of ischemic stroke lesions from DW-MRI scans, with Grad-CAM visualization for model interpretability.",
-    tag: "Research",
+    tag: "Thesis",
     image: "/images/project-4.jpg",
     info: [
-      { label: "Year", value: "2025" },
+      { label: "Year", value: "2025-2026" },
       { label: "Role", value: "Researcher & Developer" },
     ],
     links: [
@@ -66,16 +66,13 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export const SKILLS: string[] = [
-  "Java",
-  "Flutter",
-  "React",
-  "TypeScript",
-  "Python",
-  "Tailwind CSS",
-  "Next.js",
-  "Firebase",
-];
+export const SKILLS = {
+  languages: ["Java", "Dart", "SQL", "Python", "HTML/CSS"],
+  frameworks: ["Flutter"],
+  databases: ["PostgreSQL", "SQLite", "MySQL"],
+  tools: ["Git", "GitHub", "Docker", "Power BI", "VS Code"],
+  apis: ["Google Books API"],
+};
 
 export const EXPERIENCES: Experience[] = [
   {
@@ -121,6 +118,15 @@ export const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
+export const CERTIFICATIONS: Certification[] = [
+  {
+    title: "Responsive Web Design",
+    issuer: "FreeCodeCamp",
+    date: "2024",
+    image: "/images/cert-1.jpg",
+  },
+];
+
 export const SOCIAL_LINKS = {
   linkedin: "https://linkedin.com",
   github: "https://github.com",
@@ -129,7 +135,7 @@ export const SOCIAL_LINKS = {
 };
 
 export const PERSONAL_INFO = {
-  name: "AOYESHA AYEN",
+  name: "AOYESHA AYEN AMADO",
   email: "ayenamado26@gmail.com",
   heroHeading: "Hi, I am",
   heroDescription: "",

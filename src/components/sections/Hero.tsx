@@ -77,15 +77,20 @@ export default function Hero({ className = "" }: HeroProps) {
               <span className="animate-[textRoll_6s_cubic-bezier(0.65,0,0.35,1)_infinite] flex flex-col">
                 <span className="h-[44px] whitespace-nowrap bg-gradient-to-r from-accent-pink via-accent to-accent-cyan bg-clip-text text-transparent md:h-[64px] lg:h-[90px]">{PERSONAL_INFO.name}</span>
                 <span className="h-[44px] whitespace-nowrap bg-gradient-to-r from-accent-pink via-accent to-accent-cyan bg-clip-text text-transparent md:h-[64px] lg:h-[90px]">A Computer Science Student</span>
-                <span className="h-[44px] whitespace-nowrap bg-gradient-to-r from-accent-pink via-accent to-accent-cyan bg-clip-text text-transparent md:h-[64px] lg:h-[90px]">A Developer</span>
+                <span className="h-[44px] whitespace-nowrap bg-gradient-to-r from-accent-pink via-accent to-accent-cyan bg-clip-text text-transparent md:h-[64px] lg:h-[90px]">An Aspiring Developer</span>
               </span>
             </span>
           </h1>
+          <p className="mx-auto max-w-[620px] font-body text-[14px] font-normal leading-[1.7] text-neutral-offwhite md:text-[16px]">
+            I&apos;m a third-year Computer Science student at the University of Santo Tomas with an interest in full-stack development, databases, and software engineering. I enjoy building practical applications that solve real-world problems while continuously learning new technologies.
+          </p>
         </div>
 
         {/* Buttons */}
         <div className="flex items-center gap-4 animate-[fadeIn_0.8s_ease-out_1.5s_both]">
-          <Button withArrow>Contact Me</Button>
+          <a href="#contact">
+            <Button withArrow>Contact Me</Button>
+          </a>
           <SocialIcon
             icon={BiLogoLinkedin}
             href={SOCIAL_LINKS.linkedin}

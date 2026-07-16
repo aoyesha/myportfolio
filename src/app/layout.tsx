@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Manrope } from "next/font/google";
-import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -28,12 +27,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-theme="dark"
       className={`${bebasNeue.variable} ${manrope.variable} antialiased`}
     >
-      <body className="min-h-screen">
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
+      <body className="min-h-screen">{children}</body>
     </html>
   );
 }

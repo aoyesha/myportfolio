@@ -3,9 +3,6 @@
 import {
   BiLogoLinkedin,
   BiLogoGithub,
-  BiLogoInstagram,
-  BiLogoTwitter,
-  BiSend,
 } from "react-icons/bi";
 import Button from "@/components/ui/Button";
 import { PERSONAL_INFO, SOCIAL_LINKS } from "@/lib/constants";
@@ -25,7 +22,6 @@ export default function Contact({ className = "" }: ContactProps) {
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[30%] top-[20%] size-[400px] rounded-full bg-accent/5 blur-[120px] animate-pulse-glow" />
         <div className="absolute right-[10%] bottom-[10%] size-[350px] rounded-full bg-accent-pink/5 blur-[100px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
-        {/* Corner decoration */}
         <div className="absolute right-0 top-0 h-[200px] w-[200px] rounded-bl-full border-b border-l border-accent/10" />
         <div className="absolute bottom-0 left-0 h-[200px] w-[200px] rounded-tr-full border-t border-r border-accent-cyan/10" />
       </div>
@@ -45,13 +41,23 @@ export default function Contact({ className = "" }: ContactProps) {
         </div>
 
         <div className="flex flex-col items-center gap-14">
-          {/* Form — centered above */}
-          <div className="gradient-border w-full max-w-[600px] rounded-[--radius-card] p-7 md:p-9">
+          {/* Form — centered */}
+          <div className="gradient-border relative z-10 w-full max-w-[600px] rounded-[--radius-card] p-7 md:p-9">
             <form
               className="flex flex-col gap-5"
-              onSubmit={(e) => e.preventDefault()}
               aria-label="Contact form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const name = (form.elements.namedItem("Name") as HTMLInputElement).value;
+                const email = (form.elements.namedItem("Email") as HTMLInputElement).value;
+                const subject = (form.elements.namedItem("Subject") as HTMLInputElement).value;
+                const message = (form.elements.namedItem("Message") as HTMLTextAreaElement).value;
+                const body = `Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
+                window.open(`mailto:ayenamado26@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`, "_self");
+              }}
             >
+
               <div className="flex flex-col gap-1.5">
                 <label
                   htmlFor="name"
@@ -62,7 +68,8 @@ export default function Contact({ className = "" }: ContactProps) {
                 <input
                   type="text"
                   id="name"
-                  name="name"
+                  name="Name"
+                  required
                   placeholder="John Doe"
                   className="rounded-[--radius-input] border border-neutral-dark-gray/30 bg-neutral-black/60 px-4 py-3.5 font-body text-[15px] font-normal text-neutral-white placeholder:text-neutral-dark-gray/70 backdrop-blur-sm transition-all duration-300 focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/5"
                 />
@@ -78,7 +85,8 @@ export default function Contact({ className = "" }: ContactProps) {
                 <input
                   type="email"
                   id="email"
-                  name="email"
+                  name="Email"
+                  required
                   placeholder="john@example.com"
                   className="rounded-[--radius-input] border border-neutral-dark-gray/30 bg-neutral-black/60 px-4 py-3.5 font-body text-[15px] font-normal text-neutral-white placeholder:text-neutral-dark-gray/70 backdrop-blur-sm transition-all duration-300 focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/5"
                 />
@@ -94,7 +102,8 @@ export default function Contact({ className = "" }: ContactProps) {
                 <input
                   type="text"
                   id="subject"
-                  name="subject"
+                  name="Subject"
+                  required
                   placeholder="Project inquiry"
                   className="rounded-[--radius-input] border border-neutral-dark-gray/30 bg-neutral-black/60 px-4 py-3.5 font-body text-[15px] font-normal text-neutral-white placeholder:text-neutral-dark-gray/70 backdrop-blur-sm transition-all duration-300 focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/5"
                 />
@@ -109,8 +118,9 @@ export default function Contact({ className = "" }: ContactProps) {
                 </label>
                 <textarea
                   id="message"
-                  name="message"
+                  name="Message"
                   rows={4}
+                  required
                   placeholder="Tell me about your project..."
                   className="resize-none rounded-[--radius-input] border border-neutral-dark-gray/30 bg-neutral-black/60 px-4 py-3.5 font-body text-[15px] font-normal text-neutral-white placeholder:text-neutral-dark-gray/70 backdrop-blur-sm transition-all duration-300 focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/5"
                 />
@@ -134,13 +144,11 @@ export default function Contact({ className = "" }: ContactProps) {
               </a>
             </p>
 
-            {/* Social icons */}
+            {/* Social icons — LinkedIn and GitHub only */}
             <div className="flex gap-4">
               {[
                 { icon: BiLogoLinkedin, href: SOCIAL_LINKS.linkedin, label: "LinkedIn" },
                 { icon: BiLogoGithub, href: SOCIAL_LINKS.github, label: "GitHub" },
-                { icon: BiLogoTwitter, href: SOCIAL_LINKS.twitter, label: "Twitter" },
-                { icon: BiLogoInstagram, href: SOCIAL_LINKS.instagram, label: "Instagram" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
