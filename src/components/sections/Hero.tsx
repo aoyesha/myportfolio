@@ -82,7 +82,7 @@ export default function Hero({ className = "" }: HeroProps) {
             </span>
           </h1>
           <p className="mx-auto max-w-[620px] font-body text-[14px] font-normal leading-[1.7] text-neutral-offwhite md:text-[16px]">
-            I&apos;m a third-year Computer Science student at the University of Santo Tomas with an interest in full-stack development, databases, and software engineering. I enjoy building practical applications that solve real-world problems while continuously learning new technologies.
+            I&apos;m a fourth-year Computer Science student at the University of Santo Tomas with an interest in full-stack development, databases, and software engineering. I enjoy building practical applications that solve real-world problems while continuously learning new technologies.
           </p>
         </div>
 
