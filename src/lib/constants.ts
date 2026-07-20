@@ -3,7 +3,6 @@ import type { Project, Experience, NavItem, Testimonial, Certification } from ".
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "#home" },
   { label: "Projects", href: "#projects" },
-  { label: "Testimonials", href: "#testimonials" },
   { label: "About", href: "#about" },
   { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
