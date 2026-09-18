@@ -24,6 +24,34 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    title: "Viral Merch Studio — Website Redesign",
+    description:
+      "Redesigned and modernized an existing company website with a clean, responsive UI. Created high-fidelity Figma mockups and prototypes for client approval. Developed the approved design into a functional, responsive website. Collaborated with the client throughout the design and development process.",
+    tag: "Freelance",
+    image: "/images/project-5.jpg",
+    info: [
+      { label: "Client", value: "Viral Merch Studio" },
+      { label: "Role", value: "Web Designer & Developer" },
+    ],
+    links: [
+      { label: "See on Github", href: "#", type: "github" },
+    ],
+  },
+  {
+    title: "Binary Classification of Ischemic Stroke Lesions from Diffusion-Weighted MRI Using Attention-Gated 2D CNN with Grad-CAM Visualization",
+    description:
+      "Research project implementing an attention-gated 2D convolutional neural network for binary classification of ischemic stroke lesions from DW-MRI scans, with Grad-CAM visualization for model interpretability.",
+    tag: "Thesis",
+    image: "/images/project-4.jpg",
+    info: [
+      { label: "Year", value: "2025-2026" },
+      { label: "Role", value: "Researcher & Developer" },
+    ],
+    links: [
+      { label: "See on Github", href: "#", type: "github" },
+    ],
+  },
+  {
     title: "MyShelf",
     description:
       "A personal bookshelf app where users can log their mood, filter books by genre or feeling, add stories to their public profile, and recommend reads to other users.",
@@ -49,25 +77,12 @@ export const PROJECTS: Project[] = [
       { label: "See on Github", href: "#", type: "github" },
     ],
   },
-  {
-    title: "Binary Classification of Ischemic Stroke Lesions from Diffusion-Weighted MRI Using Attention-Gated 2D CNN with Grad-CAM Visualization",
-    description:
-      "Research project implementing an attention-gated 2D convolutional neural network for binary classification of ischemic stroke lesions from DW-MRI scans, with Grad-CAM visualization for model interpretability.",
-    tag: "Thesis",
-    image: "/images/project-4.jpg",
-    info: [
-      { label: "Year", value: "2025-2026" },
-      { label: "Role", value: "Researcher & Developer" },
-    ],
-    links: [
-      { label: "See on Github", href: "#", type: "github" },
-    ],
-  },
 ];
 
 export const SKILLS = {
-  languages: ["Java", "Dart", "SQL", "Python", "HTML/CSS"],
-  frameworks: ["Flutter"],
+  languages: ["Java", "JavaScript", "Dart", "SQL", "Python", "Ruby"],
+  frontend: ["HTML5", "CSS3", "React", "Tailwind CSS"],
+  frameworks: ["Flutter", "Ruby on Rails"],
   databases: ["PostgreSQL", "SQLite", "MySQL"],
   tools: ["Git", "GitHub", "Docker", "Power BI", "VS Code"],
   apis: ["Google Books API"],

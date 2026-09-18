@@ -3,8 +3,8 @@
 import {
   BiLogoLinkedin,
   BiLogoGithub,
+  BiEnvelope,
 } from "react-icons/bi";
-import Button from "@/components/ui/Button";
 import { PERSONAL_INFO, SOCIAL_LINKS } from "@/lib/constants";
 
 interface ContactProps {
@@ -26,9 +26,9 @@ export default function Contact({ className = "" }: ContactProps) {
         <div className="absolute bottom-0 left-0 h-[200px] w-[200px] rounded-tr-full border-t border-r border-accent-cyan/10" />
       </div>
 
-      <div className="relative mx-auto max-w-5xl">
-        {/* Header — centered */}
-        <div className="mb-16 flex flex-col items-center gap-4 text-center animate-fade-in-up">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-12">
+        {/* Header */}
+        <div className="flex flex-col items-center gap-4 text-center animate-fade-in-up">
           <span className="font-body text-[13px] font-semibold uppercase tracking-[4px] text-accent">
             Contact
           </span>
@@ -36,139 +36,44 @@ export default function Contact({ className = "" }: ContactProps) {
             Let&apos;s Connect
           </h2>
           <p className="max-w-[480px] font-body text-[15px] font-normal leading-[1.7] text-neutral-offwhite md:text-[17px]">
-            Have a project in mind? Let&apos;s make something amazing together.
+            Have a project in mind or just want to say hi? I&apos;d love to hear from you.
           </p>
         </div>
 
-        <div className="flex flex-col items-center gap-14">
-          {/* Form — centered */}
-          <div className="gradient-border relative z-10 w-full max-w-[600px] rounded-[--radius-card] p-7 md:p-9">
-            <form
-              className="flex flex-col gap-5"
-              aria-label="Contact form"
-              onSubmit={(e) => {
-                e.preventDefault();
-                const form = e.currentTarget;
-                const name = (form.elements.namedItem("Name") as HTMLInputElement).value;
-                const email = (form.elements.namedItem("Email") as HTMLInputElement).value;
-                const subject = (form.elements.namedItem("Subject") as HTMLInputElement).value;
-                const message = (form.elements.namedItem("Message") as HTMLTextAreaElement).value;
-                const body = `Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
-                window.open(`mailto:ayenamado26@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`, "_self");
-              }}
+        {/* Email display */}
+        <a
+          href={`mailto:${PERSONAL_INFO.email}`}
+          className="group gradient-border relative z-10 flex items-center gap-4 rounded-[--radius-card] px-10 py-7 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-accent/15"
+        >
+          <BiEnvelope size={32} className="text-accent transition-colors group-hover:text-accent-light" />
+          <span className="font-body text-[20px] font-semibold text-neutral-white transition-colors group-hover:text-accent-light md:text-[24px]">
+            {PERSONAL_INFO.email}
+          </span>
+        </a>
+
+        {/* Social icons */}
+        <div className="flex gap-4">
+          {[
+            { icon: BiLogoLinkedin, href: SOCIAL_LINKS.linkedin, label: "LinkedIn" },
+            { icon: BiLogoGithub, href: SOCIAL_LINKS.github, label: "GitHub" },
+          ].map(({ icon: Icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${label} profile`}
+              className="group flex size-12 items-center justify-center rounded-full border border-neutral-dark-gray/40 bg-neutral-card/80 text-neutral-offwhite backdrop-blur-sm transition-all duration-300 hover:border-accent/50 hover:bg-accent/10 hover:text-accent-light hover:shadow-lg hover:shadow-accent/10 hover:scale-110"
             >
-
-              <div className="flex flex-col gap-1.5">
-                <label
-                  htmlFor="name"
-                  className="font-body text-[12px] font-semibold uppercase tracking-[2px] text-neutral-offwhite/70"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="Name"
-                  required
-                  placeholder="John Doe"
-                  className="rounded-[--radius-input] border border-neutral-dark-gray/30 bg-neutral-black/60 px-4 py-3.5 font-body text-[15px] font-normal text-neutral-white placeholder:text-neutral-dark-gray/70 backdrop-blur-sm transition-all duration-300 focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/5"
-                />
-              </div>
-
-              <div className="flex flex-col gap-1.5">
-                <label
-                  htmlFor="email"
-                  className="font-body text-[12px] font-semibold uppercase tracking-[2px] text-neutral-offwhite/70"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="Email"
-                  required
-                  placeholder="john@example.com"
-                  className="rounded-[--radius-input] border border-neutral-dark-gray/30 bg-neutral-black/60 px-4 py-3.5 font-body text-[15px] font-normal text-neutral-white placeholder:text-neutral-dark-gray/70 backdrop-blur-sm transition-all duration-300 focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/5"
-                />
-              </div>
-
-              <div className="flex flex-col gap-1.5">
-                <label
-                  htmlFor="subject"
-                  className="font-body text-[12px] font-semibold uppercase tracking-[2px] text-neutral-offwhite/70"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="Subject"
-                  required
-                  placeholder="Project inquiry"
-                  className="rounded-[--radius-input] border border-neutral-dark-gray/30 bg-neutral-black/60 px-4 py-3.5 font-body text-[15px] font-normal text-neutral-white placeholder:text-neutral-dark-gray/70 backdrop-blur-sm transition-all duration-300 focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/5"
-                />
-              </div>
-
-              <div className="flex flex-col gap-1.5">
-                <label
-                  htmlFor="message"
-                  className="font-body text-[12px] font-semibold uppercase tracking-[2px] text-neutral-offwhite/70"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="Message"
-                  rows={4}
-                  required
-                  placeholder="Tell me about your project..."
-                  className="resize-none rounded-[--radius-input] border border-neutral-dark-gray/30 bg-neutral-black/60 px-4 py-3.5 font-body text-[15px] font-normal text-neutral-white placeholder:text-neutral-dark-gray/70 backdrop-blur-sm transition-all duration-300 focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:shadow-lg focus:shadow-accent/5"
-                />
-              </div>
-
-              <Button type="submit" className="mt-3 w-full">
-                Send Message
-              </Button>
-            </form>
-          </div>
-
-          {/* Info below — centered */}
-          <div className="flex flex-col items-center gap-5 text-center">
-            <p className="font-body text-[16px] font-normal leading-[1.7] text-neutral-offwhite">
-              Say hello at{" "}
-              <a
-                href={`mailto:${PERSONAL_INFO.email}`}
-                className="font-semibold text-accent transition-all hover:text-accent-light hover:underline"
-              >
-                {PERSONAL_INFO.email}
-              </a>
-            </p>
-
-            {/* Social icons — LinkedIn and GitHub only */}
-            <div className="flex gap-4">
-              {[
-                { icon: BiLogoLinkedin, href: SOCIAL_LINKS.linkedin, label: "LinkedIn" },
-                { icon: BiLogoGithub, href: SOCIAL_LINKS.github, label: "GitHub" },
-              ].map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${label} profile`}
-                  className="group flex size-12 items-center justify-center rounded-full border border-neutral-dark-gray/40 bg-neutral-card/80 text-neutral-offwhite backdrop-blur-sm transition-all duration-300 hover:border-accent/50 hover:bg-accent/10 hover:text-accent-light hover:shadow-lg hover:shadow-accent/10 hover:scale-110"
-                >
-                  <Icon size={22} />
-                </a>
-              ))}
-            </div>
-
-            {/* Copyright */}
-            <p className="mt-4 font-body text-[13px] font-medium text-neutral-offwhite/40">
-              © 2026 {PERSONAL_INFO.name}. All rights reserved.
-            </p>
-          </div>
+              <Icon size={22} />
+            </a>
+          ))}
         </div>
+
+        {/* Copyright */}
+        <p className="font-body text-[13px] font-medium text-neutral-offwhite/40">
+          © 2026 {PERSONAL_INFO.name}. All rights reserved.
+        </p>
       </div>
     </section>
   );

@@ -8,6 +8,7 @@ interface AboutProps {
 export default function About({ className = "" }: AboutProps) {
   const skillCategories = [
     { label: "Languages", items: SKILLS.languages },
+    { label: "Front-end Technology", items: SKILLS.frontend },
     { label: "Framework", items: SKILLS.frameworks },
     { label: "Databases", items: SKILLS.databases },
     { label: "Tools", items: SKILLS.tools },
