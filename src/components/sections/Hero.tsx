@@ -71,16 +71,26 @@ export default function Hero({ className = "" }: HeroProps) {
       {/* Text content — centered */}
       <div className="animate-fade-in-up flex max-w-[750px] flex-col items-center gap-8 text-center">
         <div className="flex flex-col gap-4">
-          <h1 className="glow-text font-display text-[44px] leading-none text-neutral-white md:text-[64px] lg:text-[90px]">
-            <span className="block text-center">{PERSONAL_INFO.heroHeading}</span>
-            <span className="block h-[44px] overflow-hidden text-center md:h-[64px] lg:h-[90px]">
-              <span className="animate-[textRoll_6s_cubic-bezier(0.65,0,0.35,1)_infinite] flex flex-col">
-                <span className="h-[44px] whitespace-nowrap bg-gradient-to-r from-accent-pink via-accent to-accent-cyan bg-clip-text text-transparent md:h-[64px] lg:h-[90px]">{PERSONAL_INFO.name}</span>
-                <span className="h-[44px] whitespace-nowrap bg-gradient-to-r from-accent-pink via-accent to-accent-cyan bg-clip-text text-transparent md:h-[64px] lg:h-[90px]">A Computer Science Student</span>
-                <span className="h-[44px] whitespace-nowrap bg-gradient-to-r from-accent-pink via-accent to-accent-cyan bg-clip-text text-transparent md:h-[64px] lg:h-[90px]">An Aspiring Developer</span>
-              </span>
+          {/* Hi, I am + Name on same line */}
+          <h1 className="glow-text font-display text-[40px] leading-none text-neutral-white whitespace-nowrap md:text-[58px] lg:text-[80px]">
+            {PERSONAL_INFO.heroHeading}{" "}
+            <span className="bg-gradient-to-r from-accent-pink via-accent to-accent-cyan bg-clip-text text-transparent">
+              {PERSONAL_INFO.name}
             </span>
           </h1>
+
+          {/* Rolling subtitle — slightly smaller */}
+          <div className="h-[32px] overflow-hidden md:h-[44px] lg:h-[54px]">
+            <div className="animate-[textRoll_6s_cubic-bezier(0.65,0,0.35,1)_infinite] flex flex-col">
+              <span className="h-[32px] whitespace-nowrap font-display text-[32px] leading-none text-neutral-offwhite md:h-[44px] md:text-[44px] lg:h-[54px] lg:text-[54px]">
+                An Aspiring Developer
+              </span>
+              <span className="h-[32px] whitespace-nowrap font-display text-[32px] leading-none text-neutral-offwhite md:h-[44px] md:text-[44px] lg:h-[54px] lg:text-[54px]">
+                A Computer Science Student
+              </span>
+            </div>
+          </div>
+
           <p className="mx-auto max-w-[620px] font-body text-[14px] font-normal leading-[1.7] text-neutral-offwhite md:text-[16px]">
             I&apos;m a fourth-year Computer Science student at the University of Santo Tomas with an interest in full-stack development, databases, and software engineering. I enjoy building practical applications that solve real-world problems while continuously learning new technologies.
           </p>

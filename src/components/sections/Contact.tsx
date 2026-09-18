@@ -43,10 +43,10 @@ export default function Contact({ className = "" }: ContactProps) {
         {/* Email display */}
         <a
           href={`mailto:${PERSONAL_INFO.email}`}
-          className="group gradient-border relative z-10 flex items-center gap-4 rounded-[--radius-card] px-10 py-7 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-accent/15"
+          className="group gradient-border relative z-10 flex items-center gap-3 rounded-[--radius-card] px-8 py-5 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-accent/15"
         >
-          <BiEnvelope size={32} className="text-accent transition-colors group-hover:text-accent-light" />
-          <span className="font-body text-[20px] font-semibold text-neutral-white transition-colors group-hover:text-accent-light md:text-[24px]">
+          <BiEnvelope size={24} className="text-accent transition-colors group-hover:text-accent-light shrink-0" />
+          <span className="font-body text-[16px] font-semibold text-neutral-white transition-colors group-hover:text-accent-light md:text-[18px]">
             {PERSONAL_INFO.email}
           </span>
         </a>
