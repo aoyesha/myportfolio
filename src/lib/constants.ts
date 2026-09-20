@@ -149,7 +149,7 @@ export const SOCIAL_LINKS = {
 };
 
 export const PERSONAL_INFO = {
-  name: "AOYESHA AYEN AMADO",
+  name: "AYEN",
   email: "yeshabuilds@gmail.com",
   heroHeading: "Hi, I am",
   heroDescription: "",
