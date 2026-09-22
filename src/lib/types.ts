@@ -33,6 +33,7 @@ export interface NavItem {
 export interface Testimonial {
   name: string;
   quote: string;
+  ratings?: { label: string; score: number }[];
 }
 
 export interface Certification {

@@ -3,6 +3,7 @@ import type { Project, Experience, NavItem, Testimonial, Certification } from ".
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "#home" },
   { label: "Projects", href: "#projects" },
+  { label: "Testimonials", href: "#testimonials" },
   { label: "About", href: "#about" },
   { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
@@ -106,29 +107,16 @@ export const EXPERIENCES: Experience[] = [
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: "Sean Cordova",
+    name: "Mylene — Viral Merch Studio",
     quote:
-      "Aoyesha is a great leader who knows how to bring out the best in everyone. She manages timelines effectively and keeps the team motivated even under pressure.",
-  },
-  {
-    name: "Vincent Yuri",
-    quote:
-      "Working with Aoyesha was a fantastic experience. She writes clean, maintainable code and always delivers ahead of schedule. A truly reliable developer.",
-  },
-  {
-    name: "Jaz Maglalang",
-    quote:
-      "Aoyesha has a sharp eye for detail and a deep understanding of front-end development. Her ability to translate complex designs into functional code is impressive.",
-  },
-  {
-    name: "Nathan Tolentino",
-    quote:
-      "One of the most dedicated developers I have worked with. Aoyesha consistently produces high-quality work and is always eager to learn new technologies.",
-  },
-  {
-    name: "Ericka Espina",
-    quote:
-      "Aoyesha is not only technically skilled but also an excellent communicator. She explains complex problems clearly and collaborates seamlessly with the team.",
+      "She delivered excellent results — meeting the goal of not requiring paid hosting. Her work was communicative, delivered exactly to specifications, and she solved every problem I came to her with. I would love to work with her again and will likely recommend her to others.",
+    ratings: [
+      { label: "Satisfaction with the final result", score: 5 },
+      { label: "Quality of the Work", score: 5 },
+      { label: "Communication", score: 5 },
+      { label: "Timeliness", score: 5 },
+      { label: "Easy to work with", score: 5 },
+    ],
   },
 ];
 

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { BiLogoLinkedin, BiLogoGithub } from "react-icons/bi";
 import Button from "@/components/ui/Button";
 import SocialIcon from "@/components/ui/SocialIcon";
@@ -33,45 +32,16 @@ export default function Hero({ className = "" }: HeroProps) {
         ))}
       </div>
 
-      {/* Orbit rings — decorative */}
+      {/* Orbit rings */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div className="animate-orbit absolute inset-0 size-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/10 md:size-[450px]" />
-        <div className="animate-orbit-reverse absolute inset-0 size-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent-cyan/10 md:size-[600px]" />
-      </div>
-
-      {/* Portrait with morphing border */}
-      <div className="relative mb-12">
-        {/* Pulsing rings */}
-        <div className="animate-pulse-ring absolute inset-[-15px] rounded-full border-2 border-accent/30" />
-        <div className="animate-pulse-ring absolute inset-[-30px] rounded-full border border-accent-cyan/20" style={{ animationDelay: "1s" }} />
-        <div className="animate-pulse-ring absolute inset-[-45px] rounded-full border border-accent-pink/10" style={{ animationDelay: "2s" }} />
-
-        {/* Morphing portrait container */}
-        <div className="animate-morph glow-purple relative size-[180px] overflow-hidden md:size-[250px] lg:size-[280px]">
-          <Image
-            src="/images/portrait.png"
-            alt="Portrait of Aoyesha Ayen"
-            fill
-            className="object-cover"
-            priority
-          />
-          {/* Scanline effect */}
-          <div className="pointer-events-none absolute left-0 h-[2px] w-full bg-gradient-to-r from-transparent via-accent/30 to-transparent animate-[scanline_4s_linear_infinite]" />
-        </div>
-
-        {/* Orbiting dots */}
-        <div className="animate-orbit absolute inset-0 size-full">
-          <div className="absolute -top-2 left-1/2 size-3 rounded-full bg-accent shadow-lg shadow-accent/50" />
-        </div>
-        <div className="animate-orbit-reverse absolute inset-0 size-full">
-          <div className="absolute -bottom-2 left-1/2 size-2 rounded-full bg-accent-cyan shadow-lg shadow-accent-cyan/50" />
-        </div>
+        <div className="animate-orbit absolute inset-0 size-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/10 md:size-[500px]" />
+        <div className="animate-orbit-reverse absolute inset-0 size-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent-cyan/10 md:size-[700px]" />
       </div>
 
       {/* Text content — centered */}
-      <div className="animate-fade-in-up flex max-w-[750px] flex-col items-center gap-8 text-center">
-        <div className="flex flex-col gap-4">
-          {/* Hi, I am + Name on same line */}
+      <div className="animate-fade-in-up relative z-10 flex max-w-[850px] flex-col items-center gap-8 text-center">
+        <div className="flex flex-col gap-3">
+          {/* Hi, I am AYEN — single line */}
           <h1 className="glow-text font-display text-[40px] leading-none text-neutral-white whitespace-nowrap md:text-[58px] lg:text-[80px]">
             {PERSONAL_INFO.heroHeading}{" "}
             <span className="bg-gradient-to-r from-accent-pink via-accent to-accent-cyan bg-clip-text text-transparent">
@@ -79,15 +49,14 @@ export default function Hero({ className = "" }: HeroProps) {
             </span>
           </h1>
 
-          {/* Rolling subtitle — slightly smaller */}
-          <div className="h-[32px] overflow-hidden md:h-[44px] lg:h-[54px]">
-            <div className="animate-[textRoll_6s_cubic-bezier(0.65,0,0.35,1)_infinite] flex flex-col">
-              <span className="h-[32px] whitespace-nowrap font-display text-[32px] leading-none text-neutral-offwhite md:h-[44px] md:text-[44px] lg:h-[54px] lg:text-[54px]">
-                An Aspiring Developer
-              </span>
-              <span className="h-[32px] whitespace-nowrap font-display text-[32px] leading-none text-neutral-offwhite md:h-[44px] md:text-[44px] lg:h-[54px] lg:text-[54px]">
-                A Computer Science Student
-              </span>
+          {/* Rolling subtitle — 2 items, sized to fit the longest */}
+          <div className="relative overflow-hidden" style={{ height: "1.2em", fontSize: "clamp(28px, 4vw, 52px)" }}>
+            <div
+              className="flex flex-col font-display leading-[1.2] text-neutral-offwhite whitespace-nowrap"
+              style={{ animation: "textRollTwo 6s cubic-bezier(0.65,0,0.35,1) infinite" }}
+            >
+              <span>An Aspiring Developer</span>
+              <span>A Computer Science Student</span>
             </div>
           </div>
 

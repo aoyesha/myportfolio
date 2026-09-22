@@ -172,6 +172,12 @@ body {
   100% { transform: translateY(0); }
 }
 
+@keyframes textRollTwo {
+  0%, 35% { transform: translateY(0); }
+  50%, 85% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
 .animate-morph { animation: morphRotate 8s ease-in-out infinite; }
 .animate-orbit { animation: orbitRing 12s linear infinite; }
 .animate-orbit-reverse { animation: orbitRingReverse 15s linear infinite; }
